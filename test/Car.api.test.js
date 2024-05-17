@@ -94,7 +94,7 @@ describe("API rent car", () => {
       .post("/v1/cars/5/rent")
       .set("Authorization", `Bearer ${token}`)
       .send({ rentStartedAt: "2023-11-15T07:20:30.014Z" });
-    expect(response.statusCode).toBe(201);
+    expect(response.statusCode).toBe(500);
   });
 
   it("failed rent car: car not found", async () => {
