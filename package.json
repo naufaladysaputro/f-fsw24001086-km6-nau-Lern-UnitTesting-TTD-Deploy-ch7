@@ -7,6 +7,7 @@
     "test": "jest --setupFiles dotenv/config --coverage --forceExit",
     "start": "node -r dotenv/config bin/www",
     "dev": "nodemon -r dotenv/config bin/www",
+    "build": "babel src -d dist",
     "db-create": "sequelize db:create",
     "db-drop": "sequelize db:drop",
     "db-migrate": "sequelize db:migrate",
@@ -34,6 +35,7 @@
     "sequelize-cli": "^6.6.1",
     "supertest": "^7.0.0",
     "dayjs":"*",
+    "babel":"*",
     "bcryptjs":"*",
     "swagger-ui-express": "^5.0.0"
   }
