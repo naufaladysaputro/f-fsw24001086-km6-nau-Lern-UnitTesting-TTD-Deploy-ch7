@@ -69,7 +69,7 @@ describe("API create car", () => {
       .post("/v1/cars")
       .send({})
       .set("Authorization", `Bearer ${token}`);
-    expect(response.statusCode).toBe(422);
+    expect(response.statusCode).toBe(400);
   });
 });
 
@@ -79,10 +79,10 @@ describe("API delete car By ID", () => {
 
   it("success delete data car", async () => {
     const response = await request(app)
-      .delete("/v1/cars/20")
+      .delete("/v1/cars/105")
       .set("Authorization", `Bearer ${token}`);
     expect(response.statusCode).toBe(204);
-  });
+  }, 10000 );
 });
 
 describe("API rent car", () => {

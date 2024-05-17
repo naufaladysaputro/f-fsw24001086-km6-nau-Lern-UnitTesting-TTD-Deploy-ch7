@@ -40,6 +40,11 @@ class CarController extends ApplicationController {
         image,
       } = req.body;
 
+      if (name == null || price == null || size == null || image == null) {
+        return res.status(400).json({
+          message: 'All fields are required and cannot be null',
+        });
+      }
       const car = await this.carModel.create({
         name,
         price,
@@ -134,7 +139,11 @@ class CarController extends ApplicationController {
   }
 
   handleDeleteCar = async (req, res) => {
-    const car = await this.carModel.destroy(req.params.id); 
+    const car = await this.carModel.destroy({
+        where: {
+          id: req.params.id
+        }
+      }); 
     res.status(204).end();
   }
 

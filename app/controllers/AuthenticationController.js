@@ -58,7 +58,7 @@ class AuthenticationController extends ApplicationController {
 
       if (!user) {
         const err = new EmailNotRegisteredError(email);
-        res.status(404).json(err);
+        res.status(400).json(err);
         return;
       }
 
