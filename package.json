@@ -34,6 +34,7 @@
     "sequelize-cli": "^6.6.1",
     "supertest": "^7.0.0",
     "dayjs":"*",
+    "bcryptjs":"*",
     "swagger-ui-express": "^5.0.0"
   }
 }
